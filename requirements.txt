@@ -1,11 +1,11 @@
-pyrofork>=2.3.68
+pyrofork==2.3.68
 pytz
 TgCrypto
 shortzy
 motor
 requests
 httpx
-Flask
+flask
 gunicorn
 Jinja2
 werkzeug
