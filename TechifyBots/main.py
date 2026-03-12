@@ -5,12 +5,10 @@ import httpx
 import asyncio
 from config import *
 import random
-from .db import tb
+from .database import tb
 from shortzy import Shortzy
 from config import *
-from .fsub import get_fsub
 from Script import text
-from .maintenance import get_maintenance
 
 async def short_link(link, user_id):
     usite = await tb.get_value("shortner", user_id=user_id)
@@ -28,55 +26,33 @@ async def save_data(tst_url, tst_api, user_id):
     else:
         return False
 
-@Client.on_message(filters.command('start') & filters.private)
-async def start_handler(c, m):
-    try:
-        if await tb.is_user_banned(m.from_user.id):
-            await m.reply(
-                "**🚫 You are banned from using this bot**",
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("Support", user_id=int(ADMIN))]
-                ])
-            )
-            return
-        if await tb.get_user(m.from_user.id) is None:
-            await tb.add_user(m.from_user.id, m.from_user.first_name)
-        bot = await c.get_me()
-        await c.send_message(
+@Client.on_message(filters.command("start") & filters.private)
+async def start_cmd(client, message):
+    if await tb.get_user(message.from_user.id) is None:
+        await tb.add_user(message.from_user.id, message.from_user.first_name)
+        bot = await client.get_me()
+        await client.send_message(
             LOG_CHANNEL,
             text.LOG.format(
-                m.from_user.id,
-                getattr(m.from_user, "dc_id", "N/A"),
-                m.from_user.first_name or "N/A",
-                f"@{m.from_user.username}" if m.from_user.username else "N/A",
+                message.from_user.id,
+                getattr(message.from_user, "dc_id", "N/A"),
+                message.from_user.first_name or "N/A",
+                f"@{message.from_user.username}" if message.from_user.username else "N/A",
                 bot.username
             )
         )
-        if IS_FSUB and not await get_fsub(c, m):
-            return
-        await m.reply_photo(
-            photo=random.choice(PICS),
-            caption=text.START.format(m.from_user.mention),
-            reply_markup=InlineKeyboardMarkup([
-                [
-                    InlineKeyboardButton("ℹ️ 𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
-                    InlineKeyboardButton("📚 𝖧𝖾𝗅𝗉", callback_data="help")
-                ],
-                [
-                    InlineKeyboardButton("👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻", user_id=int(ADMIN))
-                ]
-            ])
-        )
-    except Exception as u:
-        await m.reply(f"**❌ Error:** `{str(u)}`")
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=text.START.format(message.from_user.mention),
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("ℹ️ 𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
+             InlineKeyboardButton("📚 𝖧𝖾𝗅𝗉", callback_data="help")],
+            [InlineKeyboardButton("💬 𝖥𝖾𝖾𝖽𝖻𝖺𝖼𝗄 💬", url="https://telegram.me/TechifySupport")]
+        ])
+    )
 
 @Client.on_message(filters.command('shortlink') & filters.private)
 async def save_shortlink(c, m):
-    if await tb.is_user_banned(m.from_user.id):
-        await m.reply("**🚫 You are banned from using this bot**",
-                      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Support", user_id=int(ADMIN))]]))
-        return
-    if IS_FSUB and not await get_fsub(c, m): return
     if len(m.command) < 3:
         await m.reply_text(
             "**❌ Please provide both the Shortener URL and API key along with the command.\n\nExample: `/shortlink example.com your_api_key`\n\n>❤️‍🔥 By: @TechifyBots**",
@@ -96,10 +72,6 @@ async def save_shortlink(c, m):
 
 @Client.on_message(filters.command('info') & filters.private)
 async def showinfo(c, m):
-    if await tb.is_user_banned(m.from_user.id):
-        await m.reply("**🚫 You are banned from using this bot**",
-                      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Support", user_id=int(ADMIN))]]))
-        return
     usr = m.from_user
     site = await tb.get_value('shortner', user_id=usr.id)
     api = await tb.get_value('api', user_id=usr.id)
@@ -109,38 +81,22 @@ async def showinfo(c, m):
 
 @Client.on_message(filters.command("tiny") & filters.private)
 async def tiny_handler(client, message):
-    if await get_maintenance() and message.from_user.id != ADMIN:
-        return await message.reply_text("**🛠️ Bot is Under Maintenance**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Support", user_id=int(ADMIN))]]))
     parts = message.text.split(maxsplit=1)
     if len(parts) < 2:
-        await message.reply_text(
-            "❗ Send a valid URL.\n\n◉ `/tiny https://youtube.com/@techifybots`",
-            quote=True
-        )
+        await message.reply_text("❗ Send a valid URL.\n\n◉ `/tiny https://youtube.com/@techifybots`", quote=True)
         return
-
     url = parts[1].strip()
     if not url.startswith(("http://", "https://")):
-        await message.reply_text(
-            "❗ URL must start with http:// or https://",
-            quote=True
-        )
+        await message.reply_text("❗ URL must start with http:// or https://", quote=True)
         return
-
     try:
         async with httpx.AsyncClient() as client_httpx:
             resp = await client_httpx.get(f"http://tinyurl.com/api-create.php?url={url}")
             short_url = resp.text.strip()
         if not short_url.startswith("http"):
-            await message.reply_text(
-                "❌ TinyURL could not shorten this link. Try a different URL.",
-                quote=True
-            )
+            await message.reply_text("❌ TinyURL could not shorten this link. Try a different URL.", quote=True)
             return
-
-        reply_markup = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("❌ Close", callback_data="close")]]
-        )
+        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Close", callback_data="close")]])
         sent = await message.reply_text(
             f"🔗 **ShortLink:**\n\n`{short_url}`",
             reply_markup=reply_markup
@@ -155,20 +111,11 @@ async def tiny_handler(client, message):
 
 @Client.on_message(filters.text & filters.private & ~filters.command(["tiny", "stats", " broadcast "]))
 async def shorten_link(_, m):
-    if await get_maintenance() and m.from_user.id != ADMIN:
-        await m.delete()
-        return await m.reply_text("**🛠️ Bot is Under Maintenance**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Support", user_id=int(ADMIN))]]))    
-    if await tb.is_user_banned(m.from_user.id):
-        await m.reply("**🚫 You are banned from using this bot**",
-                      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Support", user_id=int(ADMIN))]]))
-        return
-    if IS_FSUB and not await get_fsub(_, m): return
     txt = m.text
     if txt.startswith("/"): return
     if not ("http://" in txt or "https://" in txt):
         await m.reply_text("Please send a valid link to shorten.")
         return
-
     usr = m.from_user
     try:
         short = await short_link(link=txt, user_id=usr.id)
