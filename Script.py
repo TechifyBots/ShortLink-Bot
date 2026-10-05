@@ -15,14 +15,22 @@ class text(object):
 ○ 𝘜𝘴𝘦𝘳𝘕𝘢𝘮𝘦 : {}
 
 𝘉𝘺 = @{}"""
-  
+
   ABOUT = """<b>‣ 𝖬𝗒 𝖭𝖺𝗆𝖾 :</b> <a href='https://youtube.com/@techifybots'>𝖳𝖾𝖼𝗁𝗂𝖿𝗒 𝖡𝗈𝗍𝗌</a>
 <b>‣ 𝖫𝗂𝖻𝗋𝖺𝗋𝗒 :</b> <a href='https://docs.pyrogram.org/'>𝖯𝗒𝗋𝗈𝗀𝗋𝖺𝗆</a>
 <b>‣ 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 :</b> <a href='https://www.mongodb.com/'>𝖬𝗈𝗇𝗀𝗈𝖣𝖡</a>
 <b>‣ 𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾 :</b> <a href='https://www.python.org/download/releases/3.0/'>𝖯𝗒𝗍𝗁𝗈𝗇 𝟥</a>
 <b>‣ 𝖡𝗈𝗍 𝖲𝖾𝗋𝗏𝖾𝗋 :</b> <a href='https://www.koyeb.com/'>𝖪𝗈𝗒𝖾𝖻</a>
 <b>‣ 𝖢𝗋𝖾𝖺𝗍𝖾𝖽 𝖡𝗒 :</b> <a href='https://telegram.me/callownerbot'>𝖱𝖺𝗁𝗎𝗅</a>"""
-  
+
+    GUIDE = """❓ 𝗛𝗮𝘃𝗶𝗻𝗴 𝗧𝗿𝗼𝘂𝗯𝗹𝗲?
+
+𝖨𝖿 𝗒𝗈𝗎'𝗋𝖾 𝖿𝖺𝖼𝗂𝗇𝗀 𝖺𝗇𝗒 𝗉𝗋𝗈𝖻𝗅𝖾𝗆 𝗐𝗁𝗂𝗅𝖾 𝗎𝗌𝗂𝗇𝗀 𝗍𝗁𝖾 𝖻𝗈𝗍 𝗈𝗋 𝗂𝗍𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌, 𝗉𝗅𝖾𝖺𝗌𝖾 𝗐𝖺𝗍𝖼𝗁 𝗍𝗁𝖾 𝗍𝗎𝗍𝗈𝗋𝗂𝖺𝗅 𝗏𝗂𝖽𝖾𝗈 𝖻𝖾𝗅𝗈𝗐.
+
+🎥 𝖳𝗁𝖾 𝗏𝗂𝖽𝖾𝗈 𝗐𝗂𝗅𝗅 𝖼𝗅𝖾𝖺𝗋𝗅𝗒 𝖾𝗑𝗉𝗅𝖺𝗂𝗇 𝗁𝗈𝗐 𝗍𝗈 𝗎𝗌𝖾 𝖾𝖺𝖼𝗁 𝖿𝖾𝖺𝗍𝗎𝗋𝖾 𝗐𝗂𝗍𝗁 𝖾𝖺𝗌𝖾.
+
+<blockquote><i>💖 𝖥𝗈𝗋 𝗆𝗈𝗋𝖾 𝗎𝗉𝖽𝖺𝗍𝖾𝗌 — <b><a href='https://techifybots.vercel.app/pay'>𝖲𝗎𝗉𝗉𝗈𝗋𝗍 𝖴𝗌</a></b></i></blockquote>"""
+
   HELP = """<blockquote><b>🚀 𝘚𝘩𝘰𝘳𝘵𝘭𝘪𝘯𝘬 𝘉𝘰𝘵 𝘎𝘶𝘪𝘥𝘦</b></blockquote>
 
 𝘌𝘢𝘴𝘪𝘭𝘺 𝘴𝘩𝘰𝘳𝘵𝘦𝘯 𝘢𝘯𝘺 𝘭𝘪𝘯𝘬 𝘶𝘴𝘪𝘯𝘨 𝘤𝘰𝘮𝘮𝘢𝘯𝘥𝘴:
