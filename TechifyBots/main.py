@@ -1,14 +1,12 @@
-from pyrogram import Client, filters
-from pyrogram.errors import *
-from pyrogram.types import *
-import httpx
 import asyncio
-from config import *
 import random
-from .database import tb
-from shortzy import Shortzy
-from config import *
+import httpx
+from pyrogram import Client, enums, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from config import LOG_CHANNEL, PICS
 from Script import text
+from shortzy import Shortzy
+from .database import tb
 
 async def short_link(link, user_id):
     usite = await tb.get_value("shortner", user_id=user_id)
@@ -47,7 +45,7 @@ async def start_cmd(client, message):
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("ℹ️ 𝖠𝖻𝗈𝗎𝗍", callback_data="about"),
              InlineKeyboardButton("📚 𝖧𝖾𝗅𝗉", callback_data="help")],
-            [InlineKeyboardButton("💬 𝖥𝖾𝖾𝖽𝖻𝖺𝖼𝗄 💬", url="https://telegram.me/TechifySupport")]
+            [InlineKeyboardButton("💬 𝖥𝖾𝖾𝖽𝖻𝖺𝖼𝗄 💬", url="https://telegram.me/TechifySupport", style=enums.ButtonStyle.PRIMARY)]
         ])
     )
 
@@ -56,7 +54,7 @@ async def save_shortlink(c, m):
     if len(m.command) < 3:
         await m.reply_text(
             "**❌ Please provide both the Shortener URL and API key along with the command.\n\nExample: `/shortlink example.com your_api_key`\n\n>❤️‍🔥 By: @TechifyBots**",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("❌ Close", callback_data="close")]]))
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("❌ 𝖢𝗅𝗈𝗌𝖾", callback_data="close", style=enums.ButtonStyle.DANGER)]]))
         return
     usr = m.from_user
     elg = await save_data(
@@ -70,6 +68,18 @@ async def save_shortlink(c, m):
     else:       
         await m.reply_text("**⚠️ Error:\n\nYour Shortlink API or URL is invalid, please check again!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("❌ Close", callback_data="close")]]))
 
+@Client.on_message(filters.command("help") & filters.private)
+async def help_cmd(client, message):
+    msg = await message.reply(text.GUIDE,
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎬 𝖶𝖺𝗍𝖼𝗁 𝖳𝗎𝗍𝗈𝗋𝗂𝖺𝗅", url="https://youtu.be/G8Nk01i0N8c", style=enums.ButtonStyle.PRIMARY)]])
+    )
+    await asyncio.sleep(300)
+    try:
+        await msg.delete()
+        await message.delete()
+    except Exception:
+        pass
+
 @Client.on_message(filters.command('info') & filters.private)
 async def showinfo(c, m):
     usr = m.from_user
@@ -77,7 +87,7 @@ async def showinfo(c, m):
     api = await tb.get_value('api', user_id=usr.id)
     await m.reply_text(
         f"**Your Information\n\n👤 User: {usr.mention}\n🆔 User ID: `{usr.id}`\n\n🌐 Connected Site: `{site}`\n🔗 Connected API: `{api}`\n\n>❤️‍🔥 By: @TechifyBots**",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("❌ Close", callback_data="close")]]))
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("❌ 𝖢𝗅𝗈𝗌𝖾", callback_data="close", style=enums.ButtonStyle.DANGER)]]))
 
 @Client.on_message(filters.command("tiny") & filters.private)
 async def tiny_handler(client, message):
@@ -96,7 +106,7 @@ async def tiny_handler(client, message):
         if not short_url.startswith("http"):
             await message.reply_text("❌ TinyURL could not shorten this link. Try a different URL.", quote=True)
             return
-        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Close", callback_data="close")]])
+        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("❌ 𝖢𝗅𝗈𝗌𝖾", callback_data="close", style=enums.ButtonStyle.DANGER)]])
         sent = await message.reply_text(
             f"🔗 **ShortLink:**\n\n`{short_url}`",
             reply_markup=reply_markup
@@ -109,7 +119,7 @@ async def tiny_handler(client, message):
     except Exception as e:
         await message.reply_text(f"❌ Failed to shorten using TinyURL: {e}", quote=True)
 
-@Client.on_message(filters.text & filters.private & ~filters.command(["tiny", "stats", " broadcast "]))
+@Client.on_message(filters.text & filters.private & ~filters.command(["tiny", "help", "stats", "broadcast"]))
 async def shorten_link(_, m):
     txt = m.text
     if txt.startswith("/"): return
@@ -120,6 +130,6 @@ async def shorten_link(_, m):
     try:
         short = await short_link(link=txt, user_id=usr.id)
         msg = f"**✨ 𝐘𝐨𝐮𝐫 𝐒𝐡𝐨𝐫𝐭 𝐋𝐢𝐧𝐤 𝐢𝐬 𝐑𝐞𝐚𝐝𝐲!\n\n🔗 𝗟𝗶𝗻𝗸: <code>{short}</code>\n\n>❤️‍🔥 By: @TechifyBots**"
-        await m.reply_text(msg, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("❌ Close", callback_data="close")]]))
+        await m.reply_text(msg, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("❌ 𝖢𝗅𝗈𝗌𝖾", callback_data="close", style=enums.ButtonStyle.DANGER)]]))
     except Exception as e:
         await m.reply_text(f"Error shortening link: {e}")
