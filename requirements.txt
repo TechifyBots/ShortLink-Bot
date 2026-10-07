@@ -1,13 +1,7 @@
 kurigram
-pytz
 TgCrypto
 shortzy
 motor
-requests
+pytz
 httpx
-flask
-gunicorn
-Jinja2
-werkzeug
-itsdangerous
 aiohttp
