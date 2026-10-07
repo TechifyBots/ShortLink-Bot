@@ -1,7 +1,7 @@
 from pyrogram import Client, filters, StopPropagation
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import *
+from config import DB_URI, DB_NAME, ADMIN, LOG_CHANNEL, AUTH_CHANNELS, AUTH_REQ_CHANNELS
 
 def normalize_ids(*items):
     ids = set()
