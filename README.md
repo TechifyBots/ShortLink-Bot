@@ -9,7 +9,7 @@
 
 
 - Link To ShortLink
-- All Sites Support
+-  Sites Support
 - Enhanced Ui
 - Simple & Best
 - Log channel support
