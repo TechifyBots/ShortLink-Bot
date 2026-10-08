@@ -5,7 +5,7 @@
 
 ### 🥰 FEATURES
 
-<details><summary>Tap On Me For Bot Features</summary>
+<details><summary>Tap Me For Bot Features</summary>
 
 
 - Link To ShortLink
