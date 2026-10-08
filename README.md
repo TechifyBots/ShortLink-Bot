@@ -11,7 +11,7 @@
 - Link 
 - All
 - Enhanced 
-- Simple & Best
+- Simple &
 - Log channel support
 - Multi Fsub channel
 - Broadcast feature
