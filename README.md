@@ -1,7 +1,6 @@
 <h1 align="center">
  <b><a href="https://youtu.be/G8Nk01i0N8c" target="/blank">ShortLink Bot</a>
 </h1>
-
 <p align="center">🩷 Thanks for Being Here 🩷</p>
 
 
