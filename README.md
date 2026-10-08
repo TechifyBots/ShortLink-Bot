@@ -8,7 +8,7 @@
 <details><summary>Tap On Me For Bot Features</summary>
 
 
-- Link To ShortLink
+- Link To
 - All Sites
 - Enhanced 
 - Simple & Best
