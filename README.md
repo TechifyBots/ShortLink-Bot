@@ -3,7 +3,6 @@
 </h1>
 <p align="center">🩷 Thanks for Being Here 🩷</p>
 
-
 ### 🥰 FEATURES
 
 <details><summary>Tap On Me For Bot Features</summary>
