@@ -5,3 +5,4 @@ motor
 pytz
 httpx
 aiohttp
+testinf
