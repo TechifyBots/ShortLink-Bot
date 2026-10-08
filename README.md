@@ -12,7 +12,7 @@
 - All
 - Enhanced 
 - Simple &
-- Log channel support
+- Log channel
 - Multi Fsub channel
 - Broadcast feature
 - Custom Url Shortner
