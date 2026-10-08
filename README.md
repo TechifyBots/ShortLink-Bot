@@ -121,8 +121,8 @@ stats - Check bot stats.
 help - Bot usage guide.
 ban - to ban a user.
 unban - to unban a user.
-tiny - To short url using tiny.
 info - To check your info.
+tiny - To short url using tiny.
 banned - to check banned users.
 shortlink - To connect your custom shortener
 maintenance - Toggle maintenance mode
