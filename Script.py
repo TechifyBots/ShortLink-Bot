@@ -2,9 +2,7 @@ class text(object):
   START = """{},
 
 𝘐 𝘤𝘢𝘯 𝘤𝘰𝘯𝘷𝘦𝘳𝘵 𝘺𝘰𝘶𝘳 𝘭𝘪𝘯𝘬𝘴 𝘪𝘯𝘵𝘰 𝘴𝘩𝘰𝘳𝘵 𝘭𝘪𝘯𝘬𝘴.
-
 𝘊𝘭𝘪𝘤𝘬 𝘵𝘩𝘦 𝘏𝘦𝘭𝘱 𝘣𝘶𝘵𝘵𝘰𝘯 𝘣𝘦𝘭𝘰𝘸 𝘵𝘰 𝘨𝘦𝘵 𝘮𝘰𝘳𝘦 𝘪𝘯𝘧𝘰.
-
 <blockquote><b>‣ 𝖬𝖺𝗂𝗇𝗍𝖺𝗂𝗇𝖾𝖽 𝖡𝗒: <a href='https://techifybots.vercel.app'>𝖳𝖾𝖼𝗁𝗂𝖿𝗒 𝖡𝗈𝗍𝗌</a></b></blockquote>"""
 
   LOG = """👁️‍🗨️ 𝘜𝘚𝘌𝘙 𝘋𝘌𝘛𝘈𝘐𝘓𝘚
