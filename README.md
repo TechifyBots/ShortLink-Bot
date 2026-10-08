@@ -9,7 +9,7 @@
 
 
 - Link 
-- All Sites
+- All
 - Enhanced 
 - Simple & Best
 - Log channel support
