@@ -13,7 +13,7 @@
 - Enhanced 
 - Simple &
 - Log channel
-- Multi Fsub channel
+- Multi Fsub
 - Broadcast feature
 - Custom Url Shortner
 - Tiny Url support
