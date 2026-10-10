@@ -2,7 +2,7 @@ import random
 from pyrogram import Client,enums
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, WebAppInfo
 from Script import text
-from config import ADMIN, PICS
+from config import ADMIN, PICS, VERSION
 
 @Client.on_callback_query()
 async def callback_query_handler(client, query: CallbackQuery):
@@ -36,7 +36,7 @@ async def callback_query_handler(client, query: CallbackQuery):
         await query.message.edit_media(
             InputMediaPhoto(
                 media=random.choice(PICS),
-                caption=text.ABOUT
+                caption=text.ABOUT.format(VERSION)
             ),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton('📂 𝖲𝗈𝗎𝗋𝖼𝖾 𝖢𝗈𝖽𝖾',url='https://github.com/TechifyBots/ShortLink-Bot')],
