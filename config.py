@@ -14,3 +14,4 @@ AUTH_CHANNELS = list(map(int, os.environ.get("AUTH_CHANNELS", "").split())) # Ad
 AUTH_REQ_CHANNELS = list(map(int, os.environ.get("AUTH_REQ_CHANNELS", "").split())) # Add Multiple channel ids
 FSUB_EXPIRE = int(os.environ.get("FSUB_EXPIRE", 2))  # minutes, 0 = no expiry
 PING_URL = os.environ.get("PING_URL", "") # Service URL for Keep-Alive
+VERSION = os.environ.get("VERSION", "3.0")
