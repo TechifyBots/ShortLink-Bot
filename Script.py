@@ -7,14 +7,14 @@ class text(object):
 
 <blockquote><b>‣ 𝖬𝖺𝗂𝗇𝗍𝖺𝗂𝗇𝖾𝖽 𝖡𝗒: <a href='https://techifybots.vercel.app'>𝖳𝖾𝖼𝗁𝗂𝖿𝗒 𝖡𝗈𝗍𝗌</a></b></blockquote>"""
 
-  LOG = """👁️‍🗨️ 𝘜𝘚𝘌𝘙 𝘋𝘌𝘛𝘈𝘐𝘓𝘚
+  LOG = """<blockquote>👁️‍🗨️ 𝗨𝘀𝗲𝗿 𝗗𝗲𝘁𝗮𝗶𝗹𝘀</blockquote>
 
-○ 𝘐𝘋 : <code>{}</code>
-○ 𝘋𝘊 : {}
-○ 𝘍𝘪𝘳𝘴𝘵 𝘕𝘢𝘮𝘦 : {}
-○ 𝘜𝘴𝘦𝘳𝘕𝘢𝘮𝘦 : {}
+○ 𝖨𝖣 : <code>{}</code>
+○ 𝖣𝖢 : {}
+○ 𝖥𝗂𝗋𝗌𝗍 𝖭𝖺𝗆𝖾 : {}
+○ 𝖴𝗌𝖾𝗋𝖭𝖺𝗆𝖾 : {}
 
-𝘉𝘺 = @{}"""
+𝖡𝗒 = @{}"""
 
   ABOUT = """<b>‣ 𝖬𝗒 𝖭𝖺𝗆𝖾 :</b> <a href='https://youtube.com/@techifybots'>𝖳𝖾𝖼𝗁𝗂𝖿𝗒 𝖡𝗈𝗍𝗌</a>
 <b>‣ 𝖫𝗂𝖻𝗋𝖺𝗋𝗒 :</b> <a href='https://docs.pyrogram.org/'>𝖯𝗒𝗋𝗈𝗀𝗋𝖺𝗆</a>
