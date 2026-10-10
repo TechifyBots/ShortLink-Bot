@@ -1,6 +1,6 @@
 import random
 from pyrogram import Client,enums
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
+from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, WebAppInfo
 from Script import text
 from config import ADMIN, PICS
 
