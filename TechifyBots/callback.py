@@ -2,7 +2,7 @@ import random
 from pyrogram import Client,enums
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, WebAppInfo
 from Script import text
-from config import ADMIN, PICS, VERSION
+from config import ADMIN, PICS, VERSION, SOURCE_CODE
 
 @Client.on_callback_query()
 async def callback_query_handler(client, query: CallbackQuery):
@@ -39,7 +39,7 @@ async def callback_query_handler(client, query: CallbackQuery):
                 caption=text.ABOUT.format(VERSION)
             ),
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('📂 𝖲𝗈𝗎𝗋𝖼𝖾 𝖢𝗈𝖽𝖾',url='https://github.com/TechifyBots/ShortLink-Bot')],
+                [InlineKeyboardButton('📂 𝖲𝗈𝗎𝗋𝖼𝖾 𝖢𝗈𝖽𝖾',url=SOURCE_CODE)],
                 [InlineKeyboardButton('☕ 𝖣𝗈𝗇𝖺𝗍𝖾', callback_data='donate'),
                  InlineKeyboardButton('👨‍💻 𝖢𝗋𝖾𝖺𝗍𝗈𝗋', user_id=int(ADMIN))],
                 [InlineKeyboardButton('↩️ 𝖡𝖺𝖼𝗄', callback_data='start', style=enums.ButtonStyle.PRIMARY)]
