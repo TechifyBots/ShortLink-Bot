@@ -5,7 +5,7 @@ class text(object):
 
 𝖢𝗅𝗂𝖼𝗄 𝗍𝗁𝖾 𝖧𝖾𝗅𝗉 𝖻𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝗍𝗈 𝗀𝖾𝗍 𝗆𝗈𝗋𝖾 𝗂𝗇𝖿𝗈.
 
-<blockquote><b>‣ 𝖬𝖺𝗂𝗇𝗍𝖺𝗂𝗇𝖾𝖽 𝖡𝗒: <a href='https://techifybots.vercel.app'>𝖳𝖾𝖼𝗁𝗂𝖿𝗒 𝖡𝗈𝗍𝗌</a></b></blockquote>"""
+<b><blockquote>‣ 𝖬𝖺𝗂𝗇𝗍𝖺𝗂𝗇𝖾𝖽 𝖡𝗒: <a href='https://rahuldhankhar.vercel.app/'>𝖱𝖺𝗁𝗎𝗅</a></blockquote></b>"""
 
   LOG = """<blockquote>👁️‍🗨️ 𝗨𝘀𝗲𝗿 𝗗𝗲𝘁𝗮𝗶𝗹𝘀</blockquote>
 
@@ -24,7 +24,9 @@ class text(object):
 <b>‣ 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 :</b> <a href='https://www.mongodb.com/'>𝖬𝗈𝗇𝗀𝗈𝖣𝖡</a>
 <b>‣ 𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾 :</b> <a href='https://www.python.org/download/releases/3.0/'>𝖯𝗒𝗍𝗁𝗈𝗇 𝟥</a>
 <b>‣ 𝖡𝗈𝗍 𝖲𝖾𝗋𝗏𝖾𝗋 :</b> <a href='https://www.koyeb.com/'>𝖪𝗈𝗒𝖾𝖻</a>
-<b>‣ 𝖢𝗋𝖾𝖺𝗍𝖾𝖽 𝖡𝗒 :</b> <a href='https://telegram.me/callownerbot'>𝖱𝖺𝗁𝗎𝗅</a>"""
+<b>‣ 𝖢𝗋𝖾𝖺𝗍𝖾𝖽 𝖡𝗒 :</b> <a href='https://techifybots.vercel.app/'>𝖳𝖾𝖼𝗁𝗂𝖿𝗒 𝖡𝗈𝗍𝗌</a>
+
+🌟 𝘛𝘩𝘢𝘯𝘬𝘴 𝘧𝘰𝘳 𝘶𝘴𝘪𝘯𝘨 𝘵𝘩𝘦 𝘣𝘰𝘵!"""
 
   GUIDE = """<blockquote>❓ 𝗛𝗮𝘃𝗶𝗻𝗴 𝗧𝗿𝗼𝘂𝗯𝗹𝗲?</blockquote>
 
