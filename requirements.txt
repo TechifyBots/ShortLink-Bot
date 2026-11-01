@@ -1,7 +1,8 @@
 kurigram
-TgCrypto
+tgcrypto
 shortzy
 motor
 pytz
 httpx
 aiohttp
+requests
