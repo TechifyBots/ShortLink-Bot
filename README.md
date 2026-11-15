@@ -118,9 +118,9 @@ Watch this short video to understand **what the bot is**, **why it's useful**, *
 ## 🤖 Commands
 
 ```
-start - Check Bot Alive.
+start - Start the bot.
+help - Get the bot usage guide.
 stats - Check bot stats.
-help - Bot usage guide.
 ban - to ban a user.
 unban - to unban a user.
 info - To check your info.
